@@ -1,4 +1,4 @@
-# THis is a Conflict Free Replicated Data Type (CRDT) with Supabase and Next.js using Yjs and may use web sockets
+# This is a Conflict Free Replicated Data Type (CRDT) with Supabase and Next.js using Yjs and may use web sockets
 # Supabase Starter
 
 This starter configures Supabase Auth to use cookies, making the user's session available throughout the entire Next.js app - Client Components, Server Components, Route Handlers, Server Actions and Middleware.
