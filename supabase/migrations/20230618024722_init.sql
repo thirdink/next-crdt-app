@@ -5,14 +5,10 @@ create table if not exists todos (
   is_complete boolean default false,
   user_id uuid references auth.users default auth.uid()
 );
-
 -- Set up Row Level Security (RLS)
 -- See https://supabase.com/docs/guides/auth/row-level-security for more details.
-alter table todos
-  enable row level security;
-
-create policy "Authenticated users can select todos" on todos
-  for select to authenticated using (true);
-
-create policy "Authenticated users can insert their own todos" on todos
-  for insert to authenticated with check (auth.uid() = user_id);
+alter table todos enable row level security;
+create policy "Authenticated users can select todos" on todos for
+select to authenticated using (true);
+create policy "Authenticated users can insert their own todos" on todos for
+insert to authenticated with check (auth.uid() = user_id);
